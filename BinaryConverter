@@ -1,0 +1,36 @@
+#Binary Converter
+#@Author Christian Kovacs
+
+#asks for input and makes an empty array
+word= str(input("Enter binary: "))
+nums = []
+
+#loops through the input and checks if all the items are ones or zeros and adds them to the array
+for i in range(len(word)):
+    if (word[i] == "1" or word[i] == "0"):
+        nums += word[i]
+        cont = True
+    else:
+        cont = False
+        nums = []
+        print("invalid")
+        break
+
+
+#sets a running total to be printed and a counter
+sum = 0
+counter = 1
+
+#Goes through the binary and if it is a 1 adds to the running total
+for i in reversed(nums):
+    if (i == "1"):
+        sum += counter
+
+    #since binary is calculated by multiples of two the counter doubles each time
+    counter *=2
+
+#if the binary is valid print the result
+if (cont == True):
+    print(sum)
+
+
